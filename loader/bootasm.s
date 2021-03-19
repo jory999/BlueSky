@@ -1,7 +1,7 @@
 .code16
 .global _start
 .section .text
-_start
+_start:
 
     jmp entry
     .byte 0x90
@@ -30,7 +30,7 @@ entry:
     movl %eax,    %ss
     movl $0x7c00, %esp
 
-    movl $x0820,  %eax
+    movl $0x0820,  %eax
     movl %eax,    %es
     movb $0,      %ch
     movb $0,      %dh
@@ -56,7 +56,7 @@ entry:
     jbe read
 
     movb $0,      %dh
-    inc %ch,
+    inc %ch
     cmp $9,        %ch
     jbe read
     jmp 0x8200
