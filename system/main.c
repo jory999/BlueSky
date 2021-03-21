@@ -1,22 +1,31 @@
+#include "../font/font.h"
+
 extern void FunctionCli(void);
 extern void FunctionOut8(int port, int data);
 extern int FunctionLoadEflags(void);
 extern void FunctionStoreEflags(int eflags);
 
-extern void DrawPoint(int x,int y,int color);//画一个点
+/* extern void DrawPoint(int x,int y,int color);//画一个点
 extern void PutChar(int x,int y, char put_char, int color);//画一个字符
 extern void PutString(int x,int y, char* string, int color);//输出字符串，输出直到结尾为\0停止符
-
+ */
 void InitPalette();
 void DrawRectangle(int x1,int y1,int x2,int y2,int color);
 #define PALETTE_NUMBER 14
 
 void SysMain()
 {
+    char * p="hello world\0";
+
     InitPalette();
-    DrawRectangle(10,10,100,100,10);
+     
+    PutString( 100, 100,11, p );
+    
+    
+    /* DrawRectangle(10,10,100,100,10);
     DrawRectangle(50,50,150,150,11);
-    DrawRectangle(100,100,200,200,13);
+    DrawRectangle(100,100,200,200,13); 
+ */
     while(1);
 }
 
