@@ -17,7 +17,7 @@ void SysMain()
 {
     char * p="hello world\0";
 
-    InitPalette();
+   // InitPalette();
      
     PutString( 100, 100,11, p );
     
