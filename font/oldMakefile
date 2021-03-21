@@ -1,0 +1,11 @@
+font.o : font.c Makefile font_code.o
+	gcc -c font.c -o font.o -m32	
+
+font_code.o : font_code.c Makefile 
+	gcc -c font_code.c -o font_code.o -m32	
+
+	
+
+
+clean:
+	rm  *.o 

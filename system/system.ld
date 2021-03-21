@@ -3,7 +3,7 @@ SECTIONS
     . = 0x8200;
     .text :
     {
-         *(.text)
+        *(.text)
     }
     .data : { *(.data) }
     .bss : { *(.bss) }
