@@ -1,6 +1,6 @@
 #include "font.h"
 extern const char font_code_global[94][16];
-
+//extern font_code_global;
 
 typedef int* va_list;
 #define va_start(ap, A)   (ap = (int *)&(A) + 1)
@@ -19,7 +19,8 @@ void PutChar(int x,int y, char put_char, int color);
 void DrawFontPoint(int x,int y,int color)
 {
     char *p;
-    p = (char*)(0xFD000000-0x8200 + (800 * y + x) * 3);
+     p = (char*)(0xFD000000-0x8200 + (800 * y + x) * 3);
+    //p = (char*)(0xa0000  + (800 * y + x) * 3);
     *(p+2) = (char)(color >> 16);
     *(p+1) = (char)((color >> 8) & 0xFF);
     *p     = (char)(color & 0xFF);
