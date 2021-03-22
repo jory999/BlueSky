@@ -28,8 +28,8 @@ start:
 
 ########################################start 32
 ############set GDT
-    movl    gdt_base,   %eax
-
+    #movl    gdt_base,   %eax
+    movl    gdt_base+0x8200, %eax  ################修改
 
 ############0# empty GDT
     movl    $0x00000000,   0(%eax)
@@ -40,6 +40,8 @@ start:
 ############2# data GDT
     movl    $0x0000ffff,   16(%eax)
     movl    $0x00cf9200,   20(%eax)
+    #movl    $0x8200ffff,   16(%eax)
+    #movl    $0x00cf9200,   20(%eax)
 ############3# stack GDT
     movl    $0x00007a00,   24(%eax)
     movl    $0x00409600,   28(%eax)
@@ -47,8 +49,8 @@ start:
 #close interrupt
     cli 
 
-
-    lgdt    gdt_size    #configuration  
+    lgdt    gdt_size+0x8200 #configuration  ################修改
+    #lgdt    gdt_size     #configuration  
 #turn on A2
     inb     $0x92,     %al
     orb $0x02,     %al

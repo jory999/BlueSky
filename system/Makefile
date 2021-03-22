@@ -7,9 +7,9 @@
 #	objcopy -O binary $(BIN_DIR)/system $(BIN_DIR)/system.bin 
 #$(OBJ_DIR)/font.o $(OBJ_DIR)/font_code.o -T system.ld font.o font_code.o 
 system.bin : system.o Makefile system.ld main.o functions.o  font.o font_code.o 
-	ld -m elf_i386 -o $(BIN_DIR)/system  $(OBJ_DIR)/system.o $(OBJ_DIR)/functions.o $(OBJ_DIR)/main.o  \
+	ld -M -m elf_i386 -o $(BIN_DIR)/system.elf  $(OBJ_DIR)/system.o $(OBJ_DIR)/functions.o $(OBJ_DIR)/main.o  \
 	$(OBJ_DIR)/font.o $(OBJ_DIR)/font_code.o -T system.ld 
-	objcopy -O binary $(BIN_DIR)/system $(BIN_DIR)/system.bin 
+	objcopy -O binary $(BIN_DIR)/system.elf $(BIN_DIR)/system.bin 
 
 	
 

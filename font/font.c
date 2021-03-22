@@ -1,16 +1,20 @@
 #include "font.h"
-
+extern const char font_code_global[94][16];
 
 
 typedef int* va_list;
 #define va_start(ap, A)   (ap = (int *)&(A) + 1)
 #define va_arg(ap, T)     (*(T *)ap++)
 #define va_end(ap)        ((void)0)
+
 void DrawFontPoint(int x,int y,int color);
+
 char *Int2String(int a, char *buf);
+
 void PutCharHex(int x, int y, int color, char c);
 void PutIntHex(int x,int y,int color, int a);
 void PutChar(int x,int y, char put_char, int color);
+
 //画出一个点
 void DrawFontPoint(int x,int y,int color)
 {

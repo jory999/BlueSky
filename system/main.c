@@ -15,15 +15,16 @@ void DrawRectangle(int x1,int y1,int x2,int y2,int color);
 
 void SysMain()
 {
-    char * p="hello world\0";
+   const char * p="hello world\0";
 
-   // InitPalette();
+    //InitPalette();
      
-    PutString( 100, 100,11, p );
-    
-    
-    /* DrawRectangle(10,10,100,100,10);
-    DrawRectangle(50,50,150,150,11);
+    PutString( 10, 10,0xffffff, "hello world\0" );
+    //PutString(100, 100,"hello world\0" ,0xff0000);
+    /* 
+    DrawRectangle(10,50,100,150,10);
+    //DrawRectangle(100,10,200,100,12);
+    DrawRectangle(50,100,150,200,11);
     DrawRectangle(100,100,200,200,13); 
  */
     while(1);
