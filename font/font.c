@@ -59,8 +59,10 @@ void PutString(int x, int y, int color, const char * s)
 {
     int i=0;
     while (*s)
+    //while (i<=6)
     {
         PutChar(x+8*i,y,*s++,color);
+        //PutChar(x+8*i,y,'A',color);
         i++;
     }
 }
