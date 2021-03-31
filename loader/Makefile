@@ -4,7 +4,7 @@ run:loader.bin
 	dd if=$(BIN_DIR)/system.bin of=$(BIN_DIR)/system.img bs=1474048 count=1 conv=sync
 	dd if=$(BIN_DIR)/system.img of=$(BIN_DIR)/loader.img bs=512 seek=1 
 	#qemu-system-i386 -fda $(BIN_DIR)/loader.img -boot a
-	qemu-system-i386 -fda $(BIN_DIR)/loader.img -boot a -gdb tcp::1234  -monitor stdio 
+	qemu-system-i386 -fda $(BIN_DIR)/loader.img -boot a -gdb tcp::1234   -monitor stdio 
     #qemu-system-i386 -fda $(BIN_DIR)/loader.img -boot a -gdb tcp::1234 -monitor stdio 
 
 loader.bin : loader.o Makefile kernel.ld
